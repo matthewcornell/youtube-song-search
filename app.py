@@ -7,7 +7,6 @@ import requests
 
 
 @click.command()
-# @click.argument('song_list_file', type=click.Path(file_okay=True, exists=True))
 @click.argument('song_list_file', type=click.File())
 def app(song_list_file):
     """
@@ -20,9 +19,10 @@ def app(song_list_file):
     print(f"song_list_file={song_list_file}")
     results = []
     for line in song_list_file:
-        urls = youtube_urls_for_query(line.strip())
+        line = line.strip()
+        query = f'song {line}'
+        urls = youtube_urls_for_query(query)
         time.sleep(5)
-        print('xx', line, len(urls), urls)
         results.append(f"{line}\t{urls[0] if urls else '??'}")
     for result in results:
         print(result)
@@ -41,13 +41,13 @@ def youtube_urls_for_query(query):
     query_url = f"https://www.youtube.com/results?search_query={encoded_query}"
 
     headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
-    print(f"requesting: {query_url!r}")
+    print(f"getting: {query_url!r}")
     response = requests.get(query_url, headers=headers)
     html = response.content.decode('utf-8')
     data_context_item_ids = re.findall(r'data-context-item-id="(.*?)"', html)  # non-greedy
-    print(f"{len(html)}. {len(data_context_item_ids)}: data_context_item_ids={data_context_item_ids}")
+    print(f"  -> {len(html)} bytes, {len(data_context_item_ids)} data-context-item-ids: data_context_item_ids={data_context_item_ids}")
     if len(html) < 5000:  # Our systems have detected unusual traffic from your computer network.
-        print(html)
+        print('drat!', html)
     return [f'https://www.youtube.com/watch?v={data_context_item_id}' for data_context_item_id in data_context_item_ids]
 
 
