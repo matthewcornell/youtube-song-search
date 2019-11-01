@@ -1,10 +1,11 @@
+import os
 import urllib
 
 import click
 import requests
 
 
-API_KEY = 'AIzaSyAqckyDHpkDcDIz3A_Zvf2xQfJFrxg6ozk'
+API_KEY = os.environ.get('API_KEY')
 
 
 @click.command()
