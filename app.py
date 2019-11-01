@@ -38,7 +38,11 @@ def youtube_search_first_hit(query):
     encoded_query = urllib.parse.quote(query)
     api_url = 'https://www.googleapis.com/youtube/v3/search'
     max_results = 1  # default = 5
-    search_url = f'{api_url}?part=snippet&maxResults={max_results}&q={encoded_query}&type=video&key={API_KEY}'
+    # limit the fields returned to minimize quota impact. we only want:
+    # - items > id > videoId
+    # - items > snippet > title
+    fields = 'items(id,snippet(title))'
+    search_url = f'{api_url}?part=snippet&fields={fields}&maxResults={max_results}&q={encoded_query}&type=video&key={API_KEY}'
     headers = {'Accept': 'application/json'}
     response = requests.get(search_url, headers=headers)
     response_json = response.json()

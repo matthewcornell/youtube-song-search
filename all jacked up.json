@@ -1,0 +1,177 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "\"j6xRRd8dTPVVptg711_CSPADRfg/KUI7mH7Ie_gcNuitfVNw4OyJgbk\"",
+  "nextPageToken": "CAUQAA",
+  "regionCode": "US",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 5
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"j6xRRd8dTPVVptg711_CSPADRfg/o5ZlmBTW5iUtwyxoS2dYAlb4Qzc\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "SIhb-kNvL6M"
+      },
+      "snippet": {
+        "publishedAt": "2014-12-25T22:27:36.000Z",
+        "channelId": "UC6hGusDLTI8bW-P4pMYdIqA",
+        "title": "American Girl",
+        "description": "Provided to YouTube by Rhino/Warner Bros. American Girl · Tom Petty And The Heartbreakers Tom Petty & The Heartbreakers ℗ 1978 Gone Gator Records ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/SIhb-kNvL6M/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/SIhb-kNvL6M/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/SIhb-kNvL6M/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Tom Petty - Topic",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"j6xRRd8dTPVVptg711_CSPADRfg/LLPKSdx4JO_Vkqih4Z6SWsI8Xh8\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "lZsMQUPxPHo"
+      },
+      "snippet": {
+        "publishedAt": "2019-10-26T11:00:10.000Z",
+        "channelId": "UC-_tUoyID1rv_ftGBk3tg_Q",
+        "title": "NEW American Girl Doll Hair &amp; Nail Salon for Dolls and Girls",
+        "description": "American Girl invited me to visit their new American Girl Salon in Chicago with my doll. My doll and I got our hair styled and nails done. This place is awesome.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/lZsMQUPxPHo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/lZsMQUPxPHo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/lZsMQUPxPHo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Chloe's American Girl Doll Channel",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"j6xRRd8dTPVVptg711_CSPADRfg/gVivabEJCe4Zn8rKac3yRi_4i1Q\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "H7Krz4D27EM"
+      },
+      "snippet": {
+        "publishedAt": "2019-10-19T11:00:11.000Z",
+        "channelId": "UC-_tUoyID1rv_ftGBk3tg_Q",
+        "title": "Packing American Girl Doll For Chicago Trip",
+        "description": "I am going to the American Girl Store in Chicago and my doll is packing up for the trip. ♥ Subscribe and hit the bell to see new videos every Wednesday and ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/H7Krz4D27EM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/H7Krz4D27EM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/H7Krz4D27EM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Chloe's American Girl Doll Channel",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"j6xRRd8dTPVVptg711_CSPADRfg/xe3OgES1LqR3mZF8MnNPbIZrVP4\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "5jzVFM2GT88"
+      },
+      "snippet": {
+        "publishedAt": "2019-10-05T12:03:05.000Z",
+        "channelId": "UC5eLObrzGgC1fxAIjT1KEXg",
+        "title": "Trendy Haircut Makeover at the Doll Salon | Dolled Up With American Girl | American Girl",
+        "description": "This American Girl doll needs a new look. Watch her get a trendy haircut and 🤘 rock her new 'do. #AmericanGirl #DolledUpWithAmericanGirl The dolls and play ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/5jzVFM2GT88/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/5jzVFM2GT88/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/5jzVFM2GT88/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "American Girl",
+        "liveBroadcastContent": "none"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "\"j6xRRd8dTPVVptg711_CSPADRfg/zcEkdrxmjeFlcRI2zuD84MnTapk\"",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "O0vXhvttics"
+      },
+      "snippet": {
+        "publishedAt": "2018-11-24T12:00:03.000Z",
+        "channelId": "UC-_tUoyID1rv_ftGBk3tg_Q",
+        "title": "Packing American Girl Doll For Hawaii",
+        "description": "American Girl Doll packs for her Hawaii trip. ♥ Subscribe to my YouTube: http://goo.gl/bLXVcy ♥ See more videos from Chloe: http://goo.gl/ahZR2L ♥ Chloe Doll ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/O0vXhvttics/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/O0vXhvttics/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/O0vXhvttics/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Chloe's American Girl Doll Channel",
+        "liveBroadcastContent": "none"
+      }
+    }
+  ]
+}
