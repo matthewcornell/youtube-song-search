@@ -6,6 +6,12 @@ import click
 import requests
 
 
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
+}
+SLEEP_SECONDS = 2
+
+
 @click.command()
 @click.argument('song_list_file', type=click.File())
 def app(song_list_file):
@@ -20,10 +26,18 @@ def app(song_list_file):
     results = []
     for line in song_list_file:
         line = line.strip()
-        query = f'song {line}'
+        query = line  # didn't always work that well: query = f'song {line}'
         urls = youtube_urls_for_query(query)
-        time.sleep(5)
-        results.append(f"{line}\t{urls[0] if urls else '??'}")
+        time.sleep(SLEEP_SECONDS)
+        first_url = urls[0] if urls else None
+
+        # todo title is probably aleady in youtube_urls_for_query() html:
+        # page_title = page_title_for_url(first_url) if first_url else '<no urls>'
+        # time.sleep(SLEEP_SECONDS)
+
+        # results.append(f"{line}\t{first_url or '<no urls>'}\t{page_title}")
+        results.append(f"{line}\t{first_url or '<no urls>'}")
+    print()
     for result in results:
         print(result)
 
@@ -40,15 +54,27 @@ def youtube_urls_for_query(query):
     # ex: "ROLLING IN THE DEEP	Adele" -> https://www.youtube.com/results?search_query=ROLLING+IN+THE+DEEP%09Adele
     query_url = f"https://www.youtube.com/results?search_query={encoded_query}"
 
-    headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
     print(f"getting: {query_url!r}")
-    response = requests.get(query_url, headers=headers)
+    response = requests.get(query_url, headers=HEADERS)
     html = response.content.decode('utf-8')
     data_context_item_ids = re.findall(r'data-context-item-id="(.*?)"', html)  # non-greedy
-    print(f"  -> {len(html)} bytes, {len(data_context_item_ids)} data-context-item-ids: data_context_item_ids={data_context_item_ids}")
+    print(
+        f"  -> {len(html)} bytes, {len(data_context_item_ids)} data-context-item-ids: {data_context_item_ids}")
     if len(html) < 5000:  # Our systems have detected unusual traffic from your computer network.
         print('drat!', html)
     return [f'https://www.youtube.com/watch?v={data_context_item_id}' for data_context_item_id in data_context_item_ids]
+
+
+def page_title_for_url(url):
+    response = requests.get(url, headers=HEADERS)
+    html = response.content.decode('utf-8')
+    # per https://stackoverflow.com/questions/26812470/how-to-get-page-title-in-requests
+    title = re.search('(?<=<title>).+?(?=</title>)', html, re.DOTALL).group().strip()
+    youtube_loc = title.find(' - YouTube')
+    if youtube_loc != -1:
+        return title[:-len(' - YouTube')]
+    else:
+        return title  # todo warn?
 
 
 if __name__ == '__main__':
