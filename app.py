@@ -1,4 +1,5 @@
 import re
+import time
 import urllib
 
 import click
@@ -20,6 +21,7 @@ def app(song_list_file):
     results = []
     for line in song_list_file:
         urls = youtube_urls_for_query(line.strip())
+        time.sleep(5)
         print('xx', line, len(urls), urls)
         results.append(f"{line}\t{urls[0] if urls else '??'}")
     for result in results:
